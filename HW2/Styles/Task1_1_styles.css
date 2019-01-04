@@ -1,0 +1,21 @@
+body{
+                width: 100%;
+                margin: 0;
+            }
+            table{
+                position: fixed;
+                width: 100%;
+                height: 50%;
+            }
+            #firstRow{
+                background-color: orange;
+            }
+            #secondRow{
+                 background-color: yellowgreen;
+            }
+            #thirdRow{
+                background-color: blue;
+            }
+            #forthRow{
+                background-color: grey;
+            }

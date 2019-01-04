@@ -1,0 +1,25 @@
+.firstSquare{
+            height: 100px;
+            width: 100px;
+            margin-top: 20px;
+            margin-left: 20px;
+            position: relative;
+            background-color: lightgreen;
+        }
+.secondSquare{
+            z-index: 1;
+            height: 100px;
+            width: 100px;
+            margin-top: -60px;
+            margin-left: 40px;
+            position: relative;
+            background-color: lightcoral;
+        }
+.thirdSquare{
+            height: 100px;
+            width: 100px;
+            margin-top: -60px;
+            margin-left: 60px;
+            position: relative;
+            background-color: lightseagreen;
+        }

@@ -1,0 +1,50 @@
+body{
+            width: 100%;
+            margin: 0;
+        }
+header{
+            position: fixed;
+            left: 5%;
+            width: 90%;
+            height: 15%;
+            border-radius: 15px;
+            border: 2px solid black;
+        }
+#sideBar{
+            position: fixed;
+            top: 120px;
+            width: 10%;
+            height: 600px;
+            background: transparent;
+            background-color: rgb(255,105,255,0.5);
+            /* z-index: -1; */
+        }
+#centerBlock{
+            position: fixed;
+            top:  150px;
+            right: 30px;
+            width: 80%;
+            border: 3px solid lightyellow;
+        }
+#sideBar > ul{
+            list-style: none;
+            margin: auto;
+            position: fixed;
+            left: -30px;
+        }
+footer{
+            position: fixed;
+            margin-left: 5%;
+            margin-right: 5%;
+            bottom: 0;
+            width: 90%;
+            height: 15%;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            background-color: cadetblue;
+            color: white;
+            text-align: center;
+        }
+h1{
+            text-align: center;
+        }
