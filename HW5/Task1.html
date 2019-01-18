@@ -1,0 +1,77 @@
+<html>
+
+<head>
+    <title>
+        Task 5 - Alena Shaadt
+    </title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="Task1_styles.css">
+</head>
+<body>
+    <div class="Rtable">
+        <div class="Rtable-cell">
+            <form action="" method="post">
+                <legend>Create UltraBook Object</legend>
+                <div class="form-group">
+                    <label for="coresNumber">Cores Number:</label>
+                    <input type="text" class="form-control" id="coresNumber">
+                </div>
+                <div class="form-group">
+                    <label for="ds">Display Size:</label>
+                    <input type="text" class="form-control" id="ds">
+                </div>
+                <div class="form-group">
+                    <label for="osVersion">OS version:</label>
+                    <input type="text" class="form-control" id="osv">
+                </div>
+                <div class="form-group">
+                    <label for="rams">RAM Size:</label>
+                    <input type="text" class="form-control" id="rams">
+                </div>
+                <div class="form-group">
+                    <label for="mems">Memory Storage:</label>
+                    <input type="text" class="form-control" id="mems">
+                </div>
+                <div class="form-group">
+                    <label for="weight">Weight:</label>
+                    <input type="text" class="form-control" id="weight">
+                </div>
+                <button type="submit" class="btn btn-primary" onclick="createUltraBookObj()">Submit</button>
+            </form>
+        </div>
+        <div class="Rtable-cell">
+            <form action="" method="post">
+                <legend>Create Computing Server Object</legend>
+                <div class="form-group">
+                    <label for="coresNumberServ">Cores Number:</label>
+                    <input type="text" class="form-control" id="coresNumberServ">
+                </div>
+                <div class="form-group">
+                    <label for="dsserv">Display Size:</label>
+                    <input type="text" class="form-control" id="dsserv">
+                </div>
+                <div class="form-group">
+                    <label for="osVersion">OS version:</label>
+                    <input type="text" class="form-control" id="osvServ">
+                </div>
+                <div class="form-group">
+                    <label for="rams">RAM Size:</label>
+                    <input type="text" class="form-control" id="ramsServ">
+                </div>
+                <div class="form-group">
+                    <label for="mems">Memory Storage:</label>
+                    <input type="text" class="form-control" id="memsServ">
+                </div>
+                <div class="form-group">
+                    <label for="nwc">Network connection:</label>
+                    <input type="text" class="form-control" id="nwc">
+                </div>
+                <button type="submit" class="btn btn-primary" onclick="createServerObj()">Submit</button>
+            </form>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="Task1.js"></script>
+</body>
+</html>

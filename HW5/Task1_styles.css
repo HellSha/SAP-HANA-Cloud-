@@ -1,0 +1,24 @@
+body{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+.Rtable {
+    display: inline-flex;
+    justify-content: flex-start;
+    width: 100%;
+    flex-wrap: wrap;
+    margin: 0 0 3em 0;
+    padding: 0;
+}
+
+.Rtable-cell {
+    box-sizing: border-box;
+    flex-grow: 1;
+    padding: 0.8em 1.2em;
+    overflow: hidden;
+    border: solid 2px white;
+    background-color: lightgrey;
+    text-align: center;
+    width: 50%;
+}
