@@ -11,7 +11,7 @@ function showData(xhr) {
                 array[i]['body'] + '</td> <td>' +
                 '<button class="btn btn-danger" id="deleteBtn" onclick="deleteRequest(' +
                 array[i]['id'] + ')">Delete</button></td><td>' +
-                '<button class="btn btn-warning" id="putBtn" onclick="drawForm(' +
+                '<button class="btn btn-warning" id="putBtn" onclick="drawFormPut(' +
                 array[i]['id'] + ')">Edit</button></td></tr>';
         }
     } else {
@@ -21,7 +21,7 @@ function showData(xhr) {
             array.email + '</td><td>' +
             array.body + '</td> <td class="btn btn-danger">' +
             '<button id="deleteBtn" onclick="deleteRequest()">Delete</button></td><button class="btn btn-warning"' +
-            '<button id="putBtn" onclick="drawForm()">Edit</button></td></tr>';
+            '<button id="putBtn" onclick="drawFormPut()">Edit</button></td></tr>';
     }
     myHTMLStr += '</table>';
     document.getElementById('table').innerHTML = myHTMLStr;
@@ -40,7 +40,7 @@ function getRequest() {
     request.send();
 }
 
-function postRequest() {
+function putRequest() {
     var params = {};
     var id = document.getElementById('commentId').value;
     params.postId = document.getElementById('userId').value;
@@ -52,6 +52,31 @@ function postRequest() {
     var jsonData = JSON.stringify(params);
 
     request.open('PUT', 'https://jsonplaceholder.typicode.com/comments/' + id, true);
+    request.setRequestHeader("Content-type", "application/json; charset=utf-8");
+    request.send(params);
+
+    request.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            alert('Changes saved!');
+            console.log(this.responseText);
+        }
+        else{
+            alert("Error. " + request.status);
+        }
+    };
+}
+
+function postRequest() {
+    var params = {};
+    params.postId = document.getElementById('userId').value;
+    params.name = document.getElementById('name').value;
+    params.email = document.getElementById('email').value;
+    params.body = document.getElementById('comment').value;
+
+    var request = new XMLHttpRequest();
+    var jsonData = JSON.stringify(params);
+
+    request.open('POST', 'https://jsonplaceholder.typicode.com/comments', true);
     request.setRequestHeader("Content-type", "application/json");
     request.send(params);
 
@@ -59,6 +84,9 @@ function postRequest() {
         if (this.readyState == 4 && this.status == 200) {
             alert('Changes saved!');
             console.log(this.responseText);
+        }
+        else{
+            alert("Error. " + request.status);
         }
     };
 }
@@ -77,10 +105,19 @@ function deleteRequest(id) {
     };
 }
 
-function drawForm(id) {
+function drawFormPut(id) {
     document.body.innerHTML = "";
     var link = document.querySelector('link[rel=import]');
     var content = link.import.querySelector('#postForm');
     document.body.appendChild(content.cloneNode(true));
+    document.getElementById('commentId').setAttribute('disabled', 'disabled');
     document.getElementById('commentId').value = id;
+}
+
+function drawFormPost() {
+    document.body.innerHTML = "";
+    var link = document.querySelector('link[rel=import]');
+    var content = link.import.querySelector('#postForm');
+    document.body.appendChild(content.cloneNode(true));
+    document.getElementById('subbutton').setAttribute('onclick','postRequest()');
 }

@@ -1,7 +1,7 @@
 <form id="postForm">
   <div class="form-group">
     <label for="commentId">Id</label>
-    <input type="number" disabled="disabled" class="form-control" id="commentId">
+    <input type="number" class="form-control" id="commentId">
     <label for="userId">Comment id</label>
     <input type="number" class="form-control" id="userId"  placeholder="Enter user id">
     <label for="name">Comment title</label>
@@ -11,5 +11,5 @@
     <label for="comment">Comment text</label>
     <input type="text" class="form-control" id="comment"  placeholder="Enter comment text">
   </div>
-  <button type="submit" onclick="postRequest()" class="btn btn-primary">Submit</button>
+  <button id="subbutton" type="submit" onclick="putRequest()" class="btn btn-primary">Submit</button>
 </form>
