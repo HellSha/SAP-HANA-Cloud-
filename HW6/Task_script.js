@@ -9,8 +9,10 @@ function showData(xhr) {
                 array[i]['name'] + '</td><td>' +
                 array[i]['email'] + '</td><td>' +
                 array[i]['body'] + '</td> <td>' +
-                '<button class="btn btn-danger" id="deleteBtn" onclick="deleteRequest()">Delete</button></td><td>' +
-                '<button class="btn btn-warning" id="putBtn" onclick="drawForm()">Edit</button></td></tr>';
+                '<button class="btn btn-danger" id="deleteBtn" onclick="deleteRequest(' +
+                array[i]['id'] + ')">Delete</button></td><td>' +
+                '<button class="btn btn-warning" id="putBtn" onclick="drawForm(' +
+                array[i]['id'] + ')">Edit</button></td></tr>';
         }
     } else {
         myHTMLStr += '<tr><td>' + array.postId + '</td><td>' +
@@ -40,16 +42,16 @@ function getRequest() {
 
 function postRequest() {
     var params = {};
+    var id = document.getElementById('commentId').value;
     params.postId = document.getElementById('userId').value;
     params.name = document.getElementById('name').value;
-    post.email = document.getElementById('email').value;
-    post.body = document.getElementById('comment').value;
-    // return post;
+    params.email = document.getElementById('email').value;
+    params.body = document.getElementById('comment').value;
 
     var request = new XMLHttpRequest();
     var jsonData = JSON.stringify(params);
 
-    request.open('POST', 'https://jsonplaceholder.typicode.com/comments', true);
+    request.open('PUT', 'https://jsonplaceholder.typicode.com/comments/' + id, true);
     request.setRequestHeader("Content-type", "application/json");
     request.send(params);
 
@@ -61,25 +63,24 @@ function postRequest() {
     };
 }
 
-function deleteRequest(){
+function deleteRequest(id) {
     var request = new XMLHttpRequest();
+
+    request.open('DELETE', 'https://jsonplaceholder.typicode.com/comments/' + id);
+    request.send();
     
-    var id = comment.id;
-     request.open('DELETE', 'https://jsonplaceholder.typicode.com/comments/' + id);
-   request.send();
-    
-     request.onreadystatechange = function () {
+    request.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             alert('Comment was successfully deleted!');
             console.log(this.responseText);
         }
-    };   
+    };
 }
 
-function drawForm() {
+function drawForm(id) {
     document.body.innerHTML = "";
     var link = document.querySelector('link[rel=import]');
     var content = link.import.querySelector('#postForm');
     document.body.appendChild(content.cloneNode(true));
-    //document.getElementById('commentId').value = comment.id;
+    document.getElementById('commentId').value = id;
 }
