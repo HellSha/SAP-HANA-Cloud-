@@ -143,12 +143,12 @@
             });
             });
             
-              //GET Request with combination of 3 filters
-            $('#order-by').on('click', function() {
+              //GET Request with combination of 3 filters + 3 string parameters
+            $('#3filters').on('click', function() {
               $.ajax({
                 type: "get",
                 async: true,
-                url: "https://services.odata.org/V4/(S(htf1jmmysolh4pyvhgn1umse))/TripPinServiceRW/People?$orderby=FirstName",
+                url: "https://services.odata.org/V4/(S(htf1jmmysolh4pyvhgn1umse))/TripPinServiceRW/People?$filter=endswith(LastName,'ndy') and startswith(FirstName,'Ro') or  substring(FirstName, 1, 2) eq 'o'",
                 success: function (data) {
                     basicConfig();
                     showData(createObjectsArray(data));
