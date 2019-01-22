@@ -54,6 +54,8 @@ function putRequest() {
     request.open('PUT', 'https://jsonplaceholder.typicode.com/comments/' + id, true);
     request.setRequestHeader("Content-type", "application/json; charset=utf-8");
     request.send(params);
+    
+    console.log(request.responseText);
 
     request.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
@@ -80,6 +82,9 @@ function postRequest() {
     request.setRequestHeader("Content-type", "application/json");
     request.send(params);
 
+     console.log(request.responseText);   
+
+    
     request.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             alert('Changes saved!');
