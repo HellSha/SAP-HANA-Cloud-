@@ -3,6 +3,7 @@ function openNewPage() {
 }
 
 function drawFlexbox() {
+
     document.body.innerHTML = "";
     var link = document.querySelector('link[rel=import]');
     var content = link.import.querySelector('.Rtable');
