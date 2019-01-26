@@ -1,0 +1,25 @@
+<mvc:View
+controllerName="sap.ui.demo.db.controller.App"
+	xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+	xmlns:mvc="sap.ui.core.mvc">
+    <Panel headerText="{i18n>header}" class="sapUiResponsiveMargin" width="auto">
+		<content>
+			<List
+				id="PeopleList"
+				headerText="{i18n>peopleList}"
+				items="{
+					path: 'people>/value',
+					factory: '.productListFactory'
+				}">
+				<dependents>
+					<ObjectListItem
+						id="productExtended"
+						title="UserName: {people>UserName}; FirstName: {people>FirstName}; LastName: {people>LastName}; Gender: {people>Gender}; Emails: {people>Emails};"
+						type="Active">
+					</ObjectListItem>
+				</dependents>
+			</List>
+		</content>
+	</Panel>
+    </mvc:View>

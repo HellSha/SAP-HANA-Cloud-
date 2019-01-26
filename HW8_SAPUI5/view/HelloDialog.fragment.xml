@@ -3,7 +3,7 @@
    xmlns:core="sap.ui.core" >
    <Dialog
       id="helloDialog"
-      title ="Hello {/recipient/name}">
+      title="Hello {/recipient/name}">
       <content>
          <core:Icon
             src="sap-icon://hello-world"
@@ -11,9 +11,9 @@
             class="sapUiMediumMargin"/>
       </content>
       <beginButton>
-         <Button
+        <Button
             text="{i18n>dialogCloseButtonText}"
             press=".onCloseDialog"/>
-      </beginButton>
+        </beginButton>
    </Dialog>
 </core:FragmentDefinition>
