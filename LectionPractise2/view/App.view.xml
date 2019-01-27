@@ -6,8 +6,7 @@ controllerName="sap.ui.demo.db.controller.App"
 	<Shell>
 	<App id="app">
 	<pages>
-	<Page >
-	
+	<Page>
     <Panel headerText="{i18n>header}" class="sapUiResponsiveMargin" width="auto">
 		<content>
 			<List

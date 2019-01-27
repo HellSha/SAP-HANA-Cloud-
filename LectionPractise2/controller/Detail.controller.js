@@ -1,7 +1,6 @@
 sap.ui.define([
-	"sap/ui/demo/db/controller/App.controller",
-	"sap/ui/core/routing/History"
-], function (AppController, History) {
+	"sap/ui/demo/db/controller/App.controller"
+], function (AppController) {
 	"use strict";
 	return AppController.extend("sap.ui.demo.db.controller.Detail", {
 		onInit: function(){
