@@ -1,0 +1,21 @@
+<mvc:View controllerName="sap.ui.demo.db.controller.Detail" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc">
+	<Shell>
+	<App id="detail">
+	<pages>
+	<Page showNavButton = "true"
+    navButtonPress = ".onNavBack">
+    <Panel id="PeopleDetailPanel" headerText="Details" class="sapUiResponsiveMargin" width="auto">
+    <content>
+    <VBox headerText="{people>UserName}">
+			<Text text="FirstName: {people>FirstName}" />
+			<Text text="LastName: {people>LastName}" />
+			<Text text="Gender: {people>Gender}" />
+			<Text text="Emails: {people>Emails}" />
+		</VBox>
+    </content>
+  </Panel>
+	</Page>
+	</pages>
+	</App>
+	</Shell>
+</mvc:View>
