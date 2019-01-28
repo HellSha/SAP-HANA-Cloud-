@@ -1,0 +1,17 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="odata.PractiseSAPUI5.controller.PersonDetail"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page title="{i18n>DetailTitle}     {people>UserName}" showNavButton="true" navButtonPress="handleNavButtonPress">
+				<content>
+					<VBox>
+						<Text text="{i18n>userName} {people>FirstName}"/>
+						<Text text="{i18n>userLastName} {people>LastName}"/>
+						<Text text="{i18n>userGender} {people>Gender}"/>
+						<Text text="{i18n>userEmails} {people>Emails}"/>
+					</VBox>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
